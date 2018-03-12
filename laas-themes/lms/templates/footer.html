@@ -9,57 +9,102 @@
 <%namespace name='static' file='static_content.html'/>
 
 <div class="wrapper wrapper-footer">
-  <footer id="footer-openedx" class="grid-container"
-    ## When rendering the footer through the branding API,
-    ## the direction may not be set on the parent element,
-    ## so we set it here.
-    % if bidi:
-      dir=${bidi}
-    % endif
-  >
-    <div class="colophon">
+  <footer>
+    <div id="footer" class="container hidden-print">
+      <div class="row">
+        <div class="col-md-4 col-lg-3">
+          <h4>Nos produits &amp; Services</h4>
+          <ul class="list-unstyled" id="products">
+            <li>
+              <a target="new" href="https://www.twmicronics.com/" title="">
+                <font class="text-white" style="">Accueil</font>
+              </a>
+            </li>
+                        <li>
+                          <a target="new" href="https://www.twmicronics.com/forum/1">
+                                <font class="text-white" style="">FAQ</font>
+                          </a>
+                        </li>
+                        <li>
+                          <a title="" target="new" href="https://www.twmicronics.com/forum">
+                                <font class="text-white" style="">Forums</font>
+                          </a>
+                        </li>
+                        <li>
+                          <a target="new" href="https://www.twmicronics.com/event" title="">
+                                <font class="text-white" style="">Évènements</font>
+                          </a>
+                        </li>
+            <li><a target="new" href="https://www.twmicronics.com/livechat/">Support via discussion instantanée</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4  col-lg-3" id="info">
+          <h4>Rejoignez-nous</h4>
+          <ul class="list-unstyled">
+            <li >
+              <a target="new" href="https://www.twmicronics.com/contactus" data-original-title="" title="">
+                <font class="text-white" style="">Contactez-nous</font>
+              </a>
+            </li>
+        <li><a target="new" href="https://www.twmicronics.com/blog/1">Actualités</a></li>
 
-      <div class="wrapper-logo">
-        <p>
-          <a href="/">
-            ## The default logo is a placeholder.
-            ## You can either replace this link entirely or update
-            ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
-            ## If you customize FOOTER_ORGANIZATION_IMAGE, then the image
-            ## can be included in the footer on other sites
-            ## (e.g. a blog or marketing front-end) to provide a consistent
-            ## user experience.  See the branding app for details.
-            <img alt="TW Micronics" src="${footer['logo_image']}">
-          </a>
-        </p>
+        <li><a target="new" href="https://www.twmicronics.com/groups">Liste de diffusion</a></li>
+
+        <li>
+            <a target="new" href="https://www.twmicronics.com/slides">Presentations</a>
+        </li>
+    </ul>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fa fa-phone"></i>
+              <span>+237 697 97 41 42 / 654 03 03 50</span>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <span>info@twmicronics.com</span>
+            </li>
+          </ul>
+          <h2>
+            <a target="new" href="https://www.facebook.com/TWMicronics237">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+            <a target="new" href="https://twitter.com/TWMicronics">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a target="new" href="https://cm.linkedin.com/in/tw-micronics-sarl-07a259112?trk=profile-badge">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a target="new" href="https://www.youtube.com/channel/UCvT5XqvHlS7ADc58agVUeOA">
+              <i class="fa fa-youtube-play"></i>
+            </a>
+
+cd sa 
+          </h2>
+        </div>
+        <div class="col-md-4 col-lg-5 col-lg-offset-1">
+          <h4>
+            <span>TW Micronics</span>
+            <small> - <a target="new" href="https://www.twmicronics.com/aboutus">À propos de nous</a></small>
+          </h4>
+          <div>
+            <p style="text-align: left;">Nous sommes&nbsp; intégrateur de solutions informatiques, fournisseur de solution Cloud, agence de marketing digital et un centre de formation technique agrée MICROSOFT. Nous proposons des solutions distinctives afin d’accroître la productivité des entreprises et des personnes. </p>
+            <p style="text-align: left;"><a target="new" href="https://www.twmicronics.com/termsconditions" >Conditions Générales de vente</a> / <a href="https://www.twmicronics.com/privacy" target="new">Politique de confidentialité</a>&nbsp;<br></p>
+            <p>
+              <br>
+            </p>
+          </div>
+
+        </div>
       </div>
-	  
-      <nav class="nav-colophon" aria-label="${_('About')}">
-        <ol>
-            % for item_num, link in enumerate(footer['navigation_links'], start=1):
-            <li class="nav-colophon-0${item_num}">
-              <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
-            </li>
-            % endfor
-        </ol>
-      </nav>
-	  
-      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-      <p class="copyright">${footer['copyright']}</p>
-
-      <nav class="nav-legal" aria-label="${_('Legal')}">
-        <ul>
-          % for item_num, link in enumerate(footer['legal_links'], start=1):
-            <li class="nav-legal-0${item_num}">
-              <a href="${link['url']}">${link['title']}</a>
-            </li>
-          % endfor
-        </ul>
-      </nav>
     </div>
-
-    % endif
+          <div class="container mt16 mb8">
+                  <div class="pull-left text-muted">
+                          © TW Micronics Academy. All rights reserved except where noted. EdX, Open edX and the edX and Open EdX logos are registered trademarks or trademarks of edX Inc
+                  </div>
+          </div>
   </footer>
+
+
 </div>
 % if include_dependencies:
   <%static:js group='base_vendor'/>
